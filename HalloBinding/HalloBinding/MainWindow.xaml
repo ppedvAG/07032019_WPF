@@ -4,15 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HalloBinding"
-        mc:Ignorable="d" Language="de"
+        xmlns:meinns ="clr-namespace:HalloBinding.meinNamespace"
+        mc:Ignorable="d" Language="de" 
         Title="MainWindow" Height="450" Width="400">
     <Window.Resources >
         <SolidColorBrush Color="#00AAFA" x:Key="meinFarbe"/>
         <BooleanToVisibilityConverter x:Key="boolToVis"/>
-        <local:BoolToRedGreenConverter x:Key="boolToRedGreen"/>
+        <meinns:BoolToRedGreenConverter x:Key="boolToRedGreen"/>
     </Window.Resources>
-    <StackPanel Margin="12" Background="{StaticResource meinFarbe}">
-        <TextBox Name="tb1"/>
+    <StackPanel  Margin="12" Background="{StaticResource meinFarbe}">
+        
+        <TextBox x:Name="tb1"/>
         <TextBox Text="{Binding ElementName=tb1,Path=Text,UpdateSourceTrigger=PropertyChanged}"
                  Background="{Binding ElementName=tb1,Path=Text,UpdateSourceTrigger=PropertyChanged}"/>
         <Slider Name="sl1" Maximum="200"/>
