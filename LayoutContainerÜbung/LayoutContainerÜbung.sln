@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LayoutContainerÜbung", "LayoutContainerÜbung\LayoutContainerÜbung.vbproj", "{1F0B74D6-1B2C-4119-A5D7-9A6A120EFFCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F0B74D6-1B2C-4119-A5D7-9A6A120EFFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F0B74D6-1B2C-4119-A5D7-9A6A120EFFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F0B74D6-1B2C-4119-A5D7-9A6A120EFFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F0B74D6-1B2C-4119-A5D7-9A6A120EFFCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8DD10E8-0556-4AB1-B700-CA2CD2A83D67}
+	EndGlobalSection
+EndGlobal
