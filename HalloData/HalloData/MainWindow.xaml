@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="600">
     <DockPanel>
         <StatusBar Height="22" Background="DarkSlateBlue" DockPanel.Dock="Bottom" />
-        <ListBox DisplayMemberPath="Name" Name="lb" Width="200" DockPanel.Dock="Left"/>
+        <ListBox ItemTemplate="{StaticResource ArtikelTemplate}" Name="lb" Width="200" DockPanel.Dock="Left"/>
         <StackPanel Margin="20">
             <Label>Name</Label>
             <TextBox Text="{Binding ElementName=lb,Path=SelectedItem.Name,UpdateSourceTrigger=PropertyChanged}"/>
@@ -17,6 +17,8 @@
             <Label>Herstelldatum</Label>
             <DatePicker SelectedDate="{Binding ElementName=lb,Path=SelectedItem.HerstellDatum}"/>
             <CheckBox IsChecked="{Binding ElementName=lb,Path=SelectedItem.Verfügbar}" Margin="0,16">Verfügbar</CheckBox>
+            <ContentPresenter ContentTemplate="{StaticResource ArtikelTemplate}"
+                              Content="{Binding ElementName=lb,Path=SelectedItem}"/>
         </StackPanel>
     </DockPanel>
 </Window>
