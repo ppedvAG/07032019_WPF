@@ -4,36 +4,52 @@
     xmlns:local="clr-namespace:HalloData"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate x:Key="ArtikelTemplate">
-            <Border BorderThickness="4" BorderBrush="CornflowerBlue" CornerRadius="12" Padding="8">
-                <Grid ShowGridLines="False">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="{Binding Name}" FontSize="16"/>
-                    <TextBlock Grid.Row="1" Text="{Binding Preis,StringFormat=c,ConverterCulture=de}"/>
-                    <Ellipse Width="20" Height="20" Grid.Column="1" Stroke="Black" StrokeThickness="1">
-                        <Ellipse.Style>
-                            <Style TargetType="Ellipse">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Verfügbar}" Value="True">
-                                        <Setter Property="Fill" Value="GreenYellow"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Verfügbar}" Value="False">
-                                        <Setter Property="Fill" Value="OrangeRed"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Ellipse.Style>
-                    </Ellipse>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding HerstellDatum,StringFormat=d,ConverterCulture=de}"/>
-                </Grid>
-            </Border>
-        </DataTemplate>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!-- Accent and AppTheme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Red.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary>
+
+
+                    <DataTemplate x:Key="ArtikelTemplate">
+                        <Border BorderThickness="4" BorderBrush="CornflowerBlue" CornerRadius="12" Padding="8">
+                            <Grid ShowGridLines="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Name}" FontSize="16"/>
+                                <TextBlock Grid.Row="1" Text="{Binding Preis,StringFormat=c,ConverterCulture=de}"/>
+                                <Ellipse Width="20" Height="20" Grid.Column="1" Stroke="Black" StrokeThickness="1">
+                                    <Ellipse.Style>
+                                        <Style TargetType="Ellipse">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Verfügbar}" Value="True">
+                                                    <Setter Property="Fill" Value="GreenYellow"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Verfügbar}" Value="False">
+                                                    <Setter Property="Fill" Value="OrangeRed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Ellipse.Style>
+                                </Ellipse>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding HerstellDatum,StringFormat=d,ConverterCulture=de}"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
