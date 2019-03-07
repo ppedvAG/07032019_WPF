@@ -19,7 +19,7 @@
         <TextBlock Text="{Binding ElementName=sl1,Path=Value,StringFormat=000.00}"
                    FontSize="{Binding ElementName=sl1,Path=Value}"/>
   
-        <CheckBox Name="cb1">Sichtbar</CheckBox>
+        <CheckBox Name="cb1" Style="{DynamicResource CheckBoxStyle1}">Sichtbar</CheckBox>
         <Rectangle Visibility="{Binding ElementName=cb1,Path=IsChecked,Converter={StaticResource boolToVis}}"
                    Width="50" Height="50" Fill="Yellow"
                    HorizontalAlignment="Left"/>

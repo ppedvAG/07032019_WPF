@@ -11,13 +11,12 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <!-- Accent and AppTheme setting -->
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Red.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Pink.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
                 <ResourceDictionary>
 
-
                     <DataTemplate x:Key="ArtikelTemplate">
-                        <Border BorderThickness="4" BorderBrush="CornflowerBlue" CornerRadius="12" Padding="8">
+                        <Border BorderThickness="4" BorderBrush="{StaticResource AccentColorBrush}" CornerRadius="12" Padding="8">
                             <Grid ShowGridLines="False">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
