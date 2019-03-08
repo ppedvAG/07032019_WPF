@@ -35,7 +35,6 @@
                             <StackPanel>
                                 <TextBox Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                                 <TextBox Text="{Binding Preis,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,StringFormat=c,ConverterCulture=de}"/>
-                                <!--<TextBox Text="{Binding DataContext.Preis,RelativeSource={RelativeSource AncestorType=UserControl},UpdateSourceTrigger=PropertyChanged}"/>-->
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
