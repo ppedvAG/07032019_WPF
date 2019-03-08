@@ -25,11 +25,38 @@ Public Class EfContextTests
     Public Sub EfContext_Can_CRUD_Artikel()
 
         Dim art As New Artikel()
-        art.Name = "TestArtikel"
-
+        art.Name = $"TestArtikel_{Guid.NewGuid()}"
+        Dim newName = $"NewTestArtikel_{Guid.NewGuid()}"
+        'INSERT
         Using con As New EfContext()
             con.Artikel.Add(art)
             con.SaveChanges()
+        End Using
+
+        'check INSERT
+        Using con As New EfContext()
+            Dim loaded = con.Artikel.Find(art.Id)
+            Assert.AreEqual(art.Name, loaded.Name)
+
+            'UDPATE
+            loaded.Name = newName
+            con.SaveChanges()
+        End Using
+
+        'check UPDATE
+        Using con As New EfContext()
+            Dim loaded = con.Artikel.Find(art.Id)
+            Assert.AreEqual(newName, loaded.Name)
+
+            'DELETE
+            con.Artikel.Remove(loaded)
+            con.SaveChanges()
+        End Using
+
+        'check DELETE
+        Using con As New EfContext()
+            Dim loaded = con.Artikel.Find(art.Id)
+            Assert.IsNull(loaded)
         End Using
     End Sub
 
