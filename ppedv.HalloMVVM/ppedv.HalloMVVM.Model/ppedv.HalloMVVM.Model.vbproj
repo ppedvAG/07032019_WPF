@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artikel.vb" />
+    <Compile Include="Contracts\IRepository.vb" />
     <Compile Include="Entity.vb" />
     <Compile Include="Gruppe.vb" />
     <Compile Include="Kategorie.vb" />

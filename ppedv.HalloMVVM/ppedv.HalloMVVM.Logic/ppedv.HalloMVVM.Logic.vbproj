@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BF3B6898-9691-4C72-BF02-7814725BC8F9}</ProjectGuid>
+    <ProjectGuid>{39710294-3F8C-4F25-BA99-15FF864C3BDE}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ppedv.HalloMVVM.Data.EF</RootNamespace>
-    <AssemblyName>ppedv.HalloMVVM.Data.EF</AssemblyName>
+    <RootNamespace>ppedv.HalloMVVM.Logic</RootNamespace>
+    <AssemblyName>ppedv.HalloMVVM.Logic</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ppedv.HalloMVVM.Data.EF.xml</DocumentationFile>
+    <DocumentationFile>ppedv.HalloMVVM.Logic.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ppedv.HalloMVVM.Data.EF.xml</DocumentationFile>
+    <DocumentationFile>ppedv.HalloMVVM.Logic.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -44,14 +44,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -71,8 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EfContext.vb" />
-    <Compile Include="EfRepository.vb" />
+    <Compile Include="Core.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -98,7 +90,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -108,9 +99,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ppedv.HalloMVVM.Data.EF\ppedv.HalloMVVM.Data.EF.vbproj">
+      <Project>{bf3b6898-9691-4c72-bf02-7814725bc8f9}</Project>
+      <Name>ppedv.HalloMVVM.Data.EF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ppedv.HalloMVVM.Model\ppedv.HalloMVVM.Model.vbproj">
       <Project>{0ea2e297-a4b5-45b0-bcd8-2e1354b83f9c}</Project>
       <Name>ppedv.HalloMVVM.Model</Name>

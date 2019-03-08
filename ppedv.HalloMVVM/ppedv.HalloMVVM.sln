@@ -9,6 +9,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ppedv.HalloMVVM.Data.EF", "
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ppedv.HalloMVVM.Data.EF.Tests", "ppedv.HalloMVVM.Data.EF.Tests\ppedv.HalloMVVM.Data.EF.Tests.vbproj", "{A71841F5-EB7E-4D8A-8972-BD86E750F3D9}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ppedv.HalloMVVM.Logic", "ppedv.HalloMVVM.Logic\ppedv.HalloMVVM.Logic.vbproj", "{39710294-3F8C-4F25-BA99-15FF864C3BDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A71841F5-EB7E-4D8A-8972-BD86E750F3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A71841F5-EB7E-4D8A-8972-BD86E750F3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A71841F5-EB7E-4D8A-8972-BD86E750F3D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39710294-3F8C-4F25-BA99-15FF864C3BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39710294-3F8C-4F25-BA99-15FF864C3BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39710294-3F8C-4F25-BA99-15FF864C3BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39710294-3F8C-4F25-BA99-15FF864C3BDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
