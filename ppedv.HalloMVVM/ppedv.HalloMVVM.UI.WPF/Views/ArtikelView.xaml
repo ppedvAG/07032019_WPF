@@ -10,6 +10,11 @@
         <local:ArtikelViewModel/>
     </UserControl.DataContext>
     <DockPanel>
+        <WrapPanel DockPanel.Dock="Top" Margin="8">
+            <Button>Speichern</Button>
+            <Button>Neu</Button>
+            <Button>Löschen</Button>
+        </WrapPanel>
         <DataGrid ItemsSource="{Binding ArtikelList}"
                   SelectedItem="{Binding SelectedArtikel}"
                   AutoGenerateColumns="False" 

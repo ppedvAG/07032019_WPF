@@ -16,7 +16,6 @@ Public Class ArtikelViewModel
             _selectedArtikel = value
 
             OnPropertyChanged(NameOf(SelectedArtikel))
-
         End Set
     End Property
 

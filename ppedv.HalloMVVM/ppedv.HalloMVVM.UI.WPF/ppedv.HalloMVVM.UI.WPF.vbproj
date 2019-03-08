@@ -70,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="RelayCommand.vb" />
     <Compile Include="ViewModels\ArtikelItem.vb" />
     <Compile Include="ViewModels\ArtikelViewModel.vb" />
     <Compile Include="ViewModels\ViewModelBase.vb" />
@@ -153,6 +154,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
