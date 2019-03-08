@@ -12,13 +12,44 @@
     <DockPanel>
         <DataGrid ItemsSource="{Binding ArtikelList}"
                   SelectedItem="{Binding SelectedArtikel}"
-                  AutoGenerateColumns="True"
-                  Width="200" DockPanel.Dock="Left" />
+                  AutoGenerateColumns="False" 
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserResizeRows="False"
+                  Width="400"
+                  DockPanel.Dock="Left" >
+            <DataGrid.Columns>
+                <DataGridTextColumn  Width="*" Header="Name" Binding="{Binding Name}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="Auto" Header="Datum" 
+                                    Binding="{Binding HerstellDatum,StringFormat=d,ConverterCulture=de}"/>
+                <DataGridTemplateColumn Header="Meine TemplateColumn">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBox Text="{Binding Name}"/>
+                                <TextBox Text="{Binding Preis}"/>
+                                <TextBox Text="{Binding DataContext.Preis,RelativeSource={RelativeSource AncestorType=UserControl},UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
         <StackPanel Margin="16" >
             <Label>Name</Label>
             <TextBox Text="{Binding SelectedArtikel.Name}" />
-            <Label>Preis</Label>
-            <TextBox Text="{Binding SelectedArtikel.Preis,StringFormat=c}"/>
+            <Label>
+                <TextBlock Text="{Binding RabattPreis,StringFormat='Preis [Rabatt: {0:c}]',ConverterCulture=de}"/>
+            </Label>
+            <TextBox Text="{Binding Preis,StringFormat=c,ConverterCulture=de,UpdateSourceTrigger=PropertyChanged}"/>
             <Label>Herstelldatum</Label>
             <DatePicker SelectedDate="{Binding SelectedArtikel.HerstellDatum}"/>
             <Label>Gruppe</Label>

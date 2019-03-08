@@ -71,6 +71,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\ArtikelViewModel.vb" />
+    <Compile Include="ViewModels\ViewModelBase.vb" />
     <Compile Include="Views\ArtikelView.xaml.vb">
       <DependentUpon>ArtikelView.xaml</DependentUpon>
     </Compile>
