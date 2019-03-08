@@ -33,9 +33,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <TextBox Text="{Binding Name}"/>
-                                <TextBox Text="{Binding Preis}"/>
-                                <TextBox Text="{Binding DataContext.Preis,RelativeSource={RelativeSource AncestorType=UserControl},UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox Text="{Binding Preis,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,StringFormat=c,ConverterCulture=de}"/>
+                                <!--<TextBox Text="{Binding DataContext.Preis,RelativeSource={RelativeSource AncestorType=UserControl},UpdateSourceTrigger=PropertyChanged}"/>-->
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -47,9 +47,9 @@
             <Label>Name</Label>
             <TextBox Text="{Binding SelectedArtikel.Name}" />
             <Label>
-                <TextBlock Text="{Binding RabattPreis,StringFormat='Preis [Rabatt: {0:c}]',ConverterCulture=de}"/>
+                <TextBlock Text="{Binding SelectedArtikel.RabattPreis,StringFormat='Preis [Rabatt: {0:c}]',ConverterCulture=de}"/>
             </Label>
-            <TextBox Text="{Binding Preis,StringFormat=c,ConverterCulture=de,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding SelectedArtikel.Preis,StringFormat=c,ConverterCulture=de,UpdateSourceTrigger=PropertyChanged}"/>
             <Label>Herstelldatum</Label>
             <DatePicker SelectedDate="{Binding SelectedArtikel.HerstellDatum}"/>
             <Label>Gruppe</Label>
