@@ -19,6 +19,33 @@ Public Class ArtikelViewModel
         End Set
     End Property
 
+    Property SaveCommand As New RelayCommand(Sub() core.Repository.SaveAll())
+
+    Property NewCommand As New RelayCommand(AddressOf UserWantsToAddNewArtikel)
+
+    Property DeleteCommand As New RelayCommand(AddressOf UserWantsToDeleteSelectedArtikel)
+
+    Private Sub UserWantsToDeleteSelectedArtikel()
+        If Not SelectedArtikel Is Nothing Then
+            core.Repository.Delete(SelectedArtikel.Artikel)
+            ArtikelList.Remove(SelectedArtikel)
+            core.Repository.SaveAll()
+        End If
+    End Sub
+
+    Private Sub UserWantsToAddNewArtikel()
+        Dim newArt As New Artikel With
+            {.Name = "NEU",
+            .Preis = 6.5D}
+
+        core.Repository.Add(newArt)
+
+        Dim ai As New ArtikelItem With {.Artikel = newArt}
+
+        ArtikelList.Add(ai)
+        SelectedArtikel = ai
+    End Sub
+
     Dim core As New Core()
 
     Sub New()

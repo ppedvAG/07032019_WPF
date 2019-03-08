@@ -25,7 +25,7 @@ Public Class RelayCommand
 #End Region
 
 #Region "ICommand"
-Public Custom Event CanExecuteChanged As EventHandler Implements System.Windows.Input.ICommand.CanExecuteChanged
+    Public Custom Event CanExecuteChanged As EventHandler Implements System.Windows.Input.ICommand.CanExecuteChanged
 
         AddHandler(ByVal value As EventHandler)
             If _CanExecute IsNot Nothing Then
